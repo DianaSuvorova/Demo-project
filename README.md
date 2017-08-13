@@ -9,6 +9,7 @@ It uses `React`, `Redux` and `material-ui`.
 The only change that I made outside of the frontend folder is the start script serves
 files generated from `frontend/build` .
 
+![Preview](http://g.recordit.co/WwH2B66q8L.gif)
 
 Thanks,
 Diana
