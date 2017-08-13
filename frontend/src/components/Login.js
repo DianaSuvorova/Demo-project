@@ -13,7 +13,6 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
   },
   form: {
     display: 'flex',
