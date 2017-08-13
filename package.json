@@ -1,0 +1,25 @@
+{
+  "name": "frontend-project",
+  "version": "1.0.0",
+  "description": "The Frontend take home project for DoorDash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve ./frontend/build",
+    "api-server": "node server.js"
+  },
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "author": "Ryan Gonzalez",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "~1.0.1",
+    "create-react-app": "^1.4.0",
+    "express": "~4.0.0",
+    "serve": "^3.1.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.8"
+  }
+}

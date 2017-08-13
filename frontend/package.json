@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eslint": "3.9.1",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-plugin-import": "1.16.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.10.3",
+    "material-ui": "^0.18.7",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.11",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "3.6.0",
+    "redux-logger": "2.6.1",
+    "redux-promise": "0.5.3",
+    "redux-thunk": "2.1.0",
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1",
+    "underscore": "1.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "$(npm bin)/eslint ."
+  }
+}
