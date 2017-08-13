@@ -1,3 +1,18 @@
+
+##Hi there,
+
+I created another frontend folder inside this repo. All the code and set up is in there.
+It uses `React`, `Redux` and `material-ui`.
+ - Palette and styles do look different
+ - There are no tests. I interpreted that you don't want test for the first pass.
+
+The only change that I made outside of the frontend folder is the start script serves
+files generated from `frontend/build` .
+
+
+Thanks,
+Diana
+
 # DoorDash Frontend Interview Project
 * TLDR: *Build a chat app with real APIs*
 * Time: *3hr - 6hrs*
@@ -32,7 +47,7 @@ We have provided a simple api server for you. You can run `npm run api-server` t
 There's a pretty fleshed out spec in the `./spec` directory. Checkout the [design specs here](./spec/designs/detailed-design-specs.md) to understand what you're building!
 
 ## What you can use to build
-You can use literally _anything_ that can be served on the web. You should use what you're most comfortable with, no matter what (even if you heard that we use React). **We want you to use the tools you know, and we want to see you at your best and most productive.** 
+You can use literally _anything_ that can be served on the web. You should use what you're most comfortable with, no matter what (even if you heard that we use React). **We want you to use the tools you know, and we want to see you at your best and most productive.**
 
 Secondly, don't worry much about setting up build tools—use something simple and fast to spin up:
 * If you're using Ember, it's fast to spin up something with [`ember-cli`](https://ember-cli.com/)
