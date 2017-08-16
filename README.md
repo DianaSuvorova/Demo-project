@@ -1,5 +1,5 @@
 
-##Hi there,
+## Hi there,
 
 I created another frontend folder inside this repo. All the code and set up is in there.
 It uses `React`, `Redux` and `material-ui`.
@@ -9,7 +9,7 @@ It uses `React`, `Redux` and `material-ui`.
 The only change that I made outside of the frontend folder is the start script serves
 files generated from `frontend/build` .
 
-![Preview](http://g.recordit.co/WwH2B66q8L.gif)
+![Preview](http://g.recordit.co/X5Zq9pXuHs.gif)
 
 Thanks,
 Diana
