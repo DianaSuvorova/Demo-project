@@ -19,10 +19,10 @@ const styles = {
     flexDirection: 'column',
   },
   button: {
-    margin: 12,
+    margin: '12px',
   },
   text: {
-    margin: 12,
+    margin: '12px',
   },
 };
 

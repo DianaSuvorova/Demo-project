@@ -49,3 +49,23 @@ export function getRoom(id) {
     dispatch(getRoomMessages(id));
   };
 }
+
+export function sendMessage(name, roomId, text) {
+  return (dispatch) => {
+    const uri = `/rooms/${roomId}/messages`;
+    const data = {
+      roomId,
+      name,
+      message: text,
+    };
+    const options = {
+      uri: `${apiBase}${uri}`,
+      method: 'POST',
+      body: data,
+      json: true,
+    };
+    return request(options).then(() => {
+      dispatch(getRoomMessages(roomId));
+    });
+  };
+}
