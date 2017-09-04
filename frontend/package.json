@@ -18,11 +18,8 @@
     "redux": "3.6.0",
     "redux-api-middleware": "^2.0.0-beta.3",
     "redux-logger": "2.6.1",
-    "redux-promise": "0.5.3",
     "redux-rx": "^0.5.0",
     "redux-thunk": "2.1.0",
-    "request": "^2.75.0",
-    "request-promise": "^4.1.1",
     "rx": "^4.1.0"
   },
   "scripts": {

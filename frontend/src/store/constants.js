@@ -1,8 +1,9 @@
-export const SET_USER_NAME = 'SET_USER_NAME';
-export const SET_CHAT_ROOMS = 'SET_CHAT_ROOMS';
-
 export const REQUEST = 'REQUEST';
+export const FAILURE = 'FAILURE';
+
+export const SET_USER_NAME = 'SET_USER_NAME';
+export const CHAT_ROOMS_SUCCESS = 'CHAT_ROOMS_SUCCESS';
+
 export const ROOM_DETAILS_SUCCESS = 'ROOM_DETAILS_SUCCESS';
 export const ROOM_MESSAGES_SUCCESS = 'ROOM_MESSAGES_SUCCESS';
-export const FAILURE = 'FAILURE';
 export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';

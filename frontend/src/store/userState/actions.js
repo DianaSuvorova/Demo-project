@@ -1,38 +1,20 @@
-import request from 'request-promise';
-import { SET_USER_NAME, SET_CHAT_ROOMS } from '../constants';
-
-const apiBase = 'http://localhost:8080/api';
-
-export function setRooms(rooms) {
-  return {
-    type: SET_CHAT_ROOMS,
-    payload: rooms,
-  };
-}
-
-export function setUserName(name) {
-  return {
-    type: SET_USER_NAME,
-    payload: name,
-  };
-}
+import { CALL_API } from 'redux-api-middleware';
+import { REQUEST, FAILURE, CHAT_ROOMS_SUCCESS, SET_USER_NAME } from '../constants';
+import { apiBase } from '../../helpers';
 
 export function getRooms() {
-  return (dispatch) => {
-    const roomsUri = '/rooms';
-    const options = {
-      uri: `${apiBase}${roomsUri}`,
+  return {
+    [CALL_API]: {
+      endpoint: `${apiBase}/rooms`,
       method: 'GET',
-    };
-    return request(options).then((response) => {
-      dispatch(setRooms(JSON.parse(response)));
-    });
+      types: [REQUEST, CHAT_ROOMS_SUCCESS, FAILURE],
+    },
   };
 }
 
 export function login(name) {
-  return (dispatch) => {
-    dispatch(setUserName(name));
-    dispatch(getRooms());
+  return {
+    type: SET_USER_NAME,
+    payload: name,
   };
 }
