@@ -1,45 +1,25 @@
 import request from 'request-promise';
-import { SET_ROOM_DETAILS, SET_ROOM_MESSAGES } from '../constants';
+import { CALL_API } from 'redux-api-middleware';
+import { REQUEST, ROOM_DETAILS_SUCCESS, FAILURE, ROOM_MESSAGES_SUCCESS, SEND_MESSAGE_SUCCESS } from '../constants';
+import { apiBase } from '../../helpers';
 
-const apiBase = 'http://localhost:8080/api';
-
-export function setRoomMessages(roomMessages) {
+export function getRoomDeatails(id) {
   return {
-    type: SET_ROOM_MESSAGES,
-    payload: roomMessages,
-  };
-}
-
-export function setRoomDetails(roomDetails) {
-  return {
-    type: SET_ROOM_DETAILS,
-    payload: roomDetails,
+    [CALL_API]: {
+      endpoint: `${apiBase}/rooms/${id}`,
+      method: 'GET',
+      types: [REQUEST, ROOM_DETAILS_SUCCESS, FAILURE],
+    },
   };
 }
 
 export function getRoomMessages(id) {
-  return (dispatch) => {
-    const uri = `/rooms/${id}/messages`;
-    const options = {
-      uri: `${apiBase}${uri}`,
+  return {
+    [CALL_API]: {
+      endpoint: `${apiBase}/rooms/${id}/messages`,
       method: 'GET',
-    };
-    return request(options).then((response) => {
-      dispatch(setRoomMessages(JSON.parse(response)));
-    });
-  };
-}
-
-export function getRoomDeatails(id) {
-  return (dispatch) => {
-    const uri = `/rooms/${id}`;
-    const options = {
-      uri: `${apiBase}${uri}`,
-      method: 'GET',
-    };
-    return request(options).then((response) => {
-      dispatch(setRoomDetails(JSON.parse(response)));
-    });
+      types: [REQUEST, ROOM_MESSAGES_SUCCESS, FAILURE],
+    },
   };
 }
 
@@ -51,6 +31,23 @@ export function getRoom(id) {
 }
 
 export function sendMessage(name, roomId, text) {
+  const data = {
+    roomId,
+    name,
+    message: text,
+  };
+  return {
+    [CALL_API]: {
+      endpoint: `${apiBase}/rooms/${roomId}/messages`,
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' },
+      types: [REQUEST, SEND_MESSAGE_SUCCESS, FAILURE],
+    },
+  };
+}
+
+export function sendMessage1(name, roomId, text) {
   return (dispatch) => {
     const uri = `/rooms/${roomId}/messages`;
     const data = {
