@@ -1,4 +1,3 @@
-import request from 'request-promise';
 import { CALL_API } from 'redux-api-middleware';
 import { REQUEST, ROOM_DETAILS_SUCCESS, FAILURE, ROOM_MESSAGES_SUCCESS, SEND_MESSAGE_SUCCESS } from '../constants';
 import { apiBase } from '../../helpers';
@@ -44,25 +43,5 @@ export function sendMessage(name, roomId, text) {
       headers: { 'Content-Type': 'application/json' },
       types: [REQUEST, SEND_MESSAGE_SUCCESS, FAILURE],
     },
-  };
-}
-
-export function sendMessage1(name, roomId, text) {
-  return (dispatch) => {
-    const uri = `/rooms/${roomId}/messages`;
-    const data = {
-      roomId,
-      name,
-      message: text,
-    };
-    const options = {
-      uri: `${apiBase}${uri}`,
-      method: 'POST',
-      body: data,
-      json: true,
-    };
-    return request(options).then(() => {
-      dispatch(getRoomMessages(roomId));
-    });
   };
 }
