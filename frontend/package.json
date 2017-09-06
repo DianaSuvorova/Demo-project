@@ -26,7 +26,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint ."
+  },
+  "devDependencies": {
+    "redux-mock-store": "^1.2.3"
   }
 }
