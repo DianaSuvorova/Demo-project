@@ -20,6 +20,8 @@
     "serve": "^3.1.0"
   },
   "dependencies": {
-    "shortid": "^2.2.8"
+    "express-ws": "^3.0.0",
+    "shortid": "^2.2.8",
+    "ws": "^3.1.0"
   }
 }

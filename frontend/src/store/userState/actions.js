@@ -1,5 +1,5 @@
 import { CALL_API } from 'redux-api-middleware';
-import { REQUEST, FAILURE, CHAT_ROOMS_SUCCESS, SET_USER_NAME } from '../constants';
+import { REQUEST, FAILURE, CHAT_ROOMS_SUCCESS, SET_USER_NAME, SET_PUSH_NOTIFICATION } from '../constants';
 import { apiBase } from '../../helpers';
 
 export function getRooms() {
@@ -16,5 +16,12 @@ export function login(name) {
   return {
     type: SET_USER_NAME,
     payload: name,
+  };
+}
+
+export function onPushNotification(msg) {
+  return {
+    type: SET_PUSH_NOTIFICATION,
+    payload: msg,
   };
 }

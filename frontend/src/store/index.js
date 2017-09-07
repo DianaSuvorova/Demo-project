@@ -5,7 +5,7 @@ import createLogger from 'redux-logger';
 import userState from './userState/userState';
 import roomState from './roomState/roomState';
 import observeStore from './observeStore';
-
+import subscribeToUpdates from './subscribeToUpdates';
 
 const reducers = {
   userState,
@@ -17,7 +17,8 @@ const composeEnhancers = compose;
 const logger = createLogger();
 const middlewares = [apiMiddleware, thunk, logger];
 
-const store = observeStore(
+const store =
+observeStore(
   createStore(
     combineReducers(reducers),
     composeEnhancers(
@@ -25,5 +26,7 @@ const store = observeStore(
     )
   )
 );
+
+subscribeToUpdates(store);
 
 export default store;

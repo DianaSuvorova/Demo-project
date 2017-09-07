@@ -1,7 +1,9 @@
+/* eslint-disable */
 var express    = require('express')
 var app        = express()
 var bodyParser = require('body-parser')
 var shortid = require('shortid')
+var expressWs = require('express-ws')(app)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -113,6 +115,22 @@ router.route('/rooms/:roomId/messages')
     }
   })
 
+  router.ws('/echo', function(ws, req) {
+    let interval = null;
+    let i = 0;
+    const send = () => {
+      ws.send(`server says hello ${i++}`);
+    };
+    interval = setInterval(send, 10000);
+    ws.on('close', () => {
+      clearInterval(interval);
+    });
+  });
+
+
 app.use('/api', router)
 app.listen(port)
+
+
+
 console.log(`API running at localhost:${port}/api`)
