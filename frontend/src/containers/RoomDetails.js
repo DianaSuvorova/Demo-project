@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import RoomDetails from '../components/RoomDetails';
-import { sendMessage } from '../store/roomState/actions';
+import { sendMessage, updateMessage } from '../store/roomState/actions';
 
 
 const mapStateToProps = store => ({
@@ -13,6 +13,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => (
   {
     onSendMessage: (name, roomId, text) => dispatch(sendMessage(name, roomId, text)),
+    onUpdateMessage: (roomId, messageId, reaction) => dispatch(
+      updateMessage(roomId, messageId, reaction)
+    ),
   }
 );
 

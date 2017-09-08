@@ -1,4 +1,4 @@
-import { ROOM_DETAILS_SUCCESS, ROOM_MESSAGES_SUCCESS, SEND_MESSAGE_SUCCESS } from '../constants';
+import { ROOM_DETAILS_SUCCESS, ROOM_MESSAGES_SUCCESS, SEND_MESSAGE_SUCCESS, UPDATE_MESSAGE_SUCCESS } from '../constants';
 
 export default function roomState(state = {
   name: null,
@@ -20,6 +20,10 @@ export default function roomState(state = {
       return newState;
     }
     case SEND_MESSAGE_SUCCESS : {
+      newState.isMessageListStale = true;
+      return newState;
+    }
+    case UPDATE_MESSAGE_SUCCESS : {
       newState.isMessageListStale = true;
       return newState;
     }

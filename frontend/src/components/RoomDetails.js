@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { List, ListItem } from 'material-ui/List';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
-
-
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+import ReactionIcon from './ReactionIcon';
+
 
 const { palette } = getMuiTheme();
 
@@ -64,10 +65,23 @@ class RoomDetails extends React.Component {
     this.props.onSendMessage(userName, roomId, this.state.message);
   }
 
+  onToggleReaction(messageId, reaction) {
+    this.props.onUpdateMessage(this.props.roomId, messageId, reaction);
+  }
+
   render() {
     const { roomName, messages } = this.props;
     const messagesEl = messages.map(msg =>
-      <ListItem key={msg.id} primaryText={msg.message} />
+      <ListItem
+        key={msg.id}
+        primaryText={msg.message}
+        rightIcon={
+          <ReactionIcon
+            toggled={msg.reaction}
+            onClick={() => this.onToggleReaction(msg.id, !msg.reaction)}
+          />
+        }
+      />
     );
     return (
       <div style={styles.container}>
@@ -101,6 +115,7 @@ RoomDetails.propTypes = {
   roomName: PropTypes.string,
   messages: PropTypes.array,
   onSendMessage: PropTypes.func.isRequired,
+  onUpdateMessage: PropTypes.func.isRequired,
 };
 
 export default RoomDetails;

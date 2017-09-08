@@ -5,7 +5,7 @@ import createLogger from 'redux-logger';
 import userState from './userState/userState';
 import roomState from './roomState/roomState';
 import observeStore from './observeStore';
-import subscribeToUpdates from './subscribeToUpdates';
+// import subscribeToUpdates from './subscribeToUpdates';
 
 const reducers = {
   userState,
@@ -27,6 +27,6 @@ observeStore(
   )
 );
 
-subscribeToUpdates(store);
+// subscribeToUpdates(store);
 
 export default store;
