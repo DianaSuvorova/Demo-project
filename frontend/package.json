@@ -33,6 +33,9 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15.4": "^1.0.5",
+    "react-addons-test-utils": "^15.6.2",
     "redux-mock-store": "^1.2.3"
   }
 }
