@@ -28,6 +28,7 @@ module.exports = (config) => {
     },
     // eslint-ignore-next-line
     plugins: [require('karma-webpack')],
+    framework: ['jasmine'],
 
   });
 };
