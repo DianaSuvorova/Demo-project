@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "serve ./frontend/build",
     "api-server": "node server.js"
+
   },
   "engines": {
     "node": ">=7.0.0"
@@ -17,6 +18,8 @@
     "body-parser": "~1.0.1",
     "create-react-app": "^1.4.0",
     "express": "~4.0.0",
+    "react-page-object": "^1.1.0",
+    "react-test-renderer": "^15.5.4",
     "serve": "^3.1.0"
   },
   "dependencies": {
