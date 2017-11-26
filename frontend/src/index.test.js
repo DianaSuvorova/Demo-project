@@ -4,17 +4,11 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15.4';
 import App from './containers/App';
 import './index.css';
-
-import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const wrap = (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+const wrap = (<Provider store={store}><App />< /Provider>);
 
 const el = Enzyme.mount(wrap, { attachTo: document.getElementById('root') });
 
@@ -42,5 +36,3 @@ const actions = [
 actions.forEach((a, n) => {
   setTimeout(() => a(), (n * 250) + 3000);
 });
-
-registerServiceWorker();
