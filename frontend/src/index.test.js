@@ -1,38 +1,44 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import Enzyme from 'enzyme';
+
 import Adapter from 'enzyme-adapter-react-15.4';
 import App from './containers/App';
 import './index.css';
 import store from './store';
 
-Enzyme.configure({ adapter: new Adapter() });
 
-const wrap = (<Provider store={store}><App />< /Provider>);
+describe('App', () => {
+  it('should run', () => {
+    Enzyme.configure({ adapter: new Adapter() });
 
-const el = Enzyme.mount(wrap, { attachTo: document.getElementById('root') });
+    const wrap = (<Provider store={store}><App />< /Provider>);
 
-const textField = el.findWhere(c => c.name() === 'TextField');
-const input = textField.findWhere(c => c.name() === 'input');
-const button = el.findWhere(c => c.name() === 'button');
-window.els = {
-  el,
-  textField,
-  input,
-  button,
-};
+    const el = Enzyme.mount(wrap, { attachTo: document.getElementById('root') });
 
-const actions = [
-  () => input.getDOMNode().focus(),
-  () => (input.instance().value = 'D'),
-  () => (input.instance().value = 'Da'),
-  () => (input.instance().value = 'Dav'),
-  () => (input.instance().value = 'Davi'),
-  () => (input.instance().value = 'David'),
-  () => input.simulate('change', input),
-  () => button.simulate('click', button),
-];
+    const textField = el.findWhere(c => c.name() === 'TextField');
+    const input = textField.findWhere(c => c.name() === 'input');
+    const button = el.findWhere(c => c.name() === 'button');
+    window.els = {
+      el,
+      textField,
+      input,
+      button,
+    };
 
-actions.forEach((a, n) => {
-  setTimeout(() => a(), (n * 250) + 3000);
+    const actions = [
+      () => input.getDOMNode().focus(),
+      () => (input.instance().value = 'D'),
+      () => (input.instance().value = 'Da'),
+      () => (input.instance().value = 'Dav'),
+      () => (input.instance().value = 'Davi'),
+      () => (input.instance().value = 'David'),
+      () => input.simulate('change', input),
+      () => button.simulate('click', button),
+    ];
+
+    actions.forEach((a, n) => {
+      setTimeout(() => a(), (n * 250) + 3000);
+    });
+  });
 });

@@ -1,37 +1,35 @@
 module.exports = (config) => {
   config.set({
-      // ... normal karma configuration
-
-    files: [
-      'src/test.js'
-      // each file acts as entry point for the webpack configuration
+    frameworks: ['mocha', 'chai'],
+    plugins: [
+      'karma-webpack',
+      'karma-mocha',
+      'karma-chai',
+      'karma-chrome-launcher',
+      'karma-mocha-reporter',
     ],
-
+    files: [
+      'src/test_index.js',
+    ],
     preprocessors: {
-    // add webpack as preprocessor
-      'src/test.js': ['webpack']
+      'src/test_index.js': ['webpack'],
     },
-
-    webpack: require('./node_modules/react-scripts/config/webpack.config.dev'),
-
-    webpackMiddleware: {
-        // webpack-dev-middleware configuration
-        // i.e.
-      noInfo: true,
-        // and use stats to turn off verbose output
-      stats: {
-          // options i.e.
-        chunks: false,
+    webpack: {
+      module: {
+        loaders: [
+          { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+          { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+          { test: /\.css$/, loader: 'css-loader' },
+        ],
       },
     },
-    // eslint-ignore-next-line
-    plugins: [
-      require('karma-webpack'),
-      require('karma-chrome-launcher'),
-      require('karma-mocha'),
-    ],
-    framework: ['mocha'],
+    reporters: ['mocha'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: false,
     browsers: ['Chrome'],
-
+    singleRun: true,
+    concurrency: Infinity,
   });
 };
