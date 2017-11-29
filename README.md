@@ -25,6 +25,7 @@ keep it running. in a different terminal window:
  ```npm start```
 
 
-The enzyme setup [file](https://github.com/DianaSuvorova/Demo-project/blob/master/frontend/src/index.js)
+The enzyme setup [file](https://github.com/DianaSuvorova/Demo-project/blob/master/frontend/src/index.js).
+
 Recording of a script
 ![Recording](http://g.recordit.co/0FlWPih8wR.gif)
