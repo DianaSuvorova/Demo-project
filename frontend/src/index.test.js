@@ -14,7 +14,9 @@ describe('App', () => {
 
     const wrap = (<Provider store={store}><App />< /Provider>);
 
-    const el = Enzyme.mount(wrap, { attachTo: document.getElementById('root') });
+    const el = Enzyme.mount(wrap,
+      { attachTo: document.getElementById('root') }
+    );
 
     const textField = el.findWhere(c => c.name() === 'TextField');
     const input = textField.findWhere(c => c.name() === 'input');
@@ -28,13 +30,14 @@ describe('App', () => {
 
     const actions = [
       () => input.getDOMNode().focus(),
-      () => (input.instance().value = 'D'),
-      () => (input.instance().value = 'Da'),
-      () => (input.instance().value = 'Dav'),
-      () => (input.instance().value = 'Davi'),
-      () => (input.instance().value = 'David'),
-      () => input.simulate('change', input),
-      () => button.simulate('click', button),
+      () => input.getDOMNode().val('Diana'),
+      // () => (input.instance().value = 'D'),
+      // () => (input.instance().value = 'Da'),
+      // () => (input.instance().value = 'Dav'),
+      // () => (input.instance().value = 'Davi'),
+      // () => (input.instance().value = 'David'),
+      // () => input.simulate('change', input),
+      // () => button.simulate('click', button),
     ];
 
     actions.forEach((a, n) => {
