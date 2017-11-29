@@ -26,4 +26,5 @@ keep it running. in a different terminal window:
 
 
 The enzyme setup [file](https://github.com/DianaSuvorova/Demo-project/blob/master/frontend/src/index.js)
-[Recording](http://recordit.co/0FlWPih8wR) of a script 
+Recording of a script
+![Recording](http://g.recordit.co/0FlWPih8wR.gif)
