@@ -23,3 +23,7 @@ keep it running. in a different terminal window:
 
  ```cd ./frontend```
  ```npm start```
+
+
+The enzyme setup file is here:
+https://github.com/DianaSuvorova/Demo-project/blob/master/frontend/src/index.js
