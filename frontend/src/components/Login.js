@@ -54,7 +54,7 @@ class Login extends React.Component {
             onChange={(e, value) => { this.onInputName(value); }}
           />
           <RaisedButton
-            label="Join the DoorDash chat!"
+            label="Join the chat!"
             primary
             style={styles.button}
             onClick={() => this.onClickSubmit()}

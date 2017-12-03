@@ -1,7 +1,7 @@
 {
   "name": "frontend-project",
   "version": "1.0.0",
-  "description": "The Frontend take home project for DoorDash",
+  "description": "demo enzyme integration test prject",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,6 @@
   "engines": {
     "node": ">=7.0.0"
   },
-  "author": "Ryan Gonzalez",
   "license": "ISC",
   "devDependencies": {
     "body-parser": "~1.0.1",

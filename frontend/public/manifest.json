@@ -1,6 +1,6 @@
 {
-  "short_name": "DoorDash Chat App",
-  "name": "DoorDash Chat App",
+  "short_name": "Demo",
+  "name": "Demo",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
