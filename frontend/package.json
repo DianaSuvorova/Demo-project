@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "starti": "Node_env=test react-scripts start",
+    "start:test": "NODE_ENV=test react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
