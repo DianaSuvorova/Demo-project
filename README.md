@@ -27,7 +27,7 @@ keep it running. in a different terminal window:
 
 The above will start the integration test.
 For this to work properly there is a tiny diff for react-create-app that I hope will merge soon:
-*I need to figure out how to update dependency in the meantime
+*I need to figure out how to update dependency in the meantime*
 https://github.com/facebookincubator/create-react-app/pull/3541
 
 
