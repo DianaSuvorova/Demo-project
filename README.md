@@ -26,12 +26,6 @@ keep it running. in a different terminal window:
 
 
 The above will start the integration test.
-For this to work properly there is a tiny diff for react-create-app that I hope will merge soon:
-*I need to figure out how to update dependency in the meantime
-https://github.com/facebookincubator/create-react-app/pull/3541
-
-
-The enzyme setup [file](https://github.com/DianaSuvorova/Demo-project/blob/master/frontend/src/index.js).
 
 Recording of a script
 ![Recording](http://g.recordit.co/mlLiNPvjON.gif)
