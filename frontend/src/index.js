@@ -11,7 +11,6 @@ import store from './store';
 import { iTest } from './index.itest';
 
 if (process.env.REACT_APP_IS_E2E_TEST) {
-  debugger;
   Enzyme.configure({ adapter: new Adapter() });
 
   const wrap = (<Provider store={store}><App />< /Provider>);
